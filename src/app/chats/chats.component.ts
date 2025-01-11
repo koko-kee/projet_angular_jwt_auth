@@ -38,8 +38,14 @@ export class ChatsComponent implements OnInit {
   }
 
   sendMessage() {
-    this.chatService.sendMessage({ message: this.newMessage }).subscribe(
+    if (!this.newMessage.trim()) return;
+    const messageData = { message: this.newMessage };
+    this.chatService.sendMessage(messageData).subscribe(
       (response) => {
+        this.messages.push({
+          message: this.newMessage,
+          created_at: new Date(),
+        });
         this.newMessage = '';
       },
       (error) => {
@@ -48,3 +54,4 @@ export class ChatsComponent implements OnInit {
     );
   }
 }
+  
