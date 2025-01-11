@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatsComponent } from './chats/chats.component';
-import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent, ChatsComponent, LoginComponent],
+  declarations: [AppComponent, ChatsComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
